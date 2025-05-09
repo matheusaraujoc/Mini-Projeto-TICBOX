@@ -23,15 +23,6 @@ Uma aplicação web simples para **coletar**, **armazenar** e **visualizar** fee
 
 ---
 
-## Estrutura de Arquivos
-feedback-app/
-|-- index.html       (Formulário de envio de feedback)
-|-- list.html        (Listagem de feedbacks)
-|-- edit.html        (Edição de um feedback existente)
-|-- style.css        (Estilos em tons de verde)
-`-- script.js        (Lógica de CRUD via LocalStorage)
----
-
 ## Como Executar
 
 1. **Clone** ou **baixe** este repositório para sua máquina.  
