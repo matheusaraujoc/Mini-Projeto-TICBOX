@@ -1,0 +1,373 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --success: #27ae60;
+    --danger: #e74c3c;
+    --light: #ecf0f1;
+    --dark: #2c3e50;
+    --radius: 8px;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: var(--light);
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 2px solid #ddd;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+.error {
+    color: var(--danger);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button[type="submit"] {
+    background: var(--success);
+    color: white;
+    font-weight: 600;
+}
+
+.user-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.user-card {
+    padding: 1.5rem;
+    border: 2px solid #eee;
+    border-radius: var(--radius);
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+.user-card:hover {
+    transform: translateY(-5px);
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.whatsapp {
+    background: #25D366;
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+.email {
+    background: var(--danger);
+    color: white;
+    padding: 0.6rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.edit-btn, .delete-btn {
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+.edit-btn {
+    background: var(--secondary);
+    color: white;
+}
+
+.delete-btn {
+    background: var(--danger);
+    color: white;
+}
+
+.edit-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 2rem;
+}
+
+.cancel-btn {
+    background: var(--danger);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .contact-buttons, .actions {
+        flex-direction: column;
+    }
+}
+
+:root {
+    --primary: #2ecc71;       
+    --secondary: #27ae60;     
+    --success: #219a52;       
+    --danger: #c0392b;        
+    --light: #ecf0f1;         
+    --dark: #2c3e50;          
+    --rating: #f1c40f;        
+    --radius: 8px;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+body {
+    background: #e8f5e9;
+}
+
+button[type="submit"] {
+    background: var(--secondary);
+}
+
+.edit-btn {
+    background: var(--primary);
+}
+
+.user-card {
+    border-color: var(--primary);
+}
+
+.rating {
+    color: var(--rating);
+}
+
+.view-feedbacks-btn {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 2rem auto;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.view-feedbacks-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.contact-line {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+}
+
+.contact-line p {
+    margin: 0;
+}
+
+.whatsapp {
+    background: #25D366;
+    order: 2;
+}
+
+.email {
+    background: var(--danger);
+    order: 2;
+}
+
+@media (max-width: 768px) {
+    .contact-line {
+        flex-wrap: wrap;
+    }
+    
+    .whatsapp, .email {
+        width: 100%;
+        order: 3;
+        text-align: center;
+    }
+}
+
+/* Novos estilos para list.html */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.return-btn {
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.return-btn:hover {
+    background: var(--secondary);
+    transform: translateY(-2px);
+}
+
+.user-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--primary);
+}
+
+.detail-item {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: center;
+}
+
+.detail-item.full-width {
+    grid-template-columns: 1fr;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.detail-content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.description-text {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: var(--radius);
+    line-height: 1.5;
+}
+
+.whatsapp, .email,
+.edit-btn, .delete-btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+    min-width: 100px;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.whatsapp::before {
+    content: "📱";
+}
+.email::before {
+    content: "📧";
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .detail-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+    
+    .detail-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .whatsapp, .email {
+        width: 120px;
+    }
+}
+

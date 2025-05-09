@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - TICBOX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Deixar Feedback</h1>
+        <a href="list.html" class="view-feedbacks-btn">📋 Ver Feedbacks</a>
+        <form id="userForm">
+        <form id="userForm">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Celular:</label>
+                <input type="text" id="phone" placeholder="(99) 99999-9999" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea id="description" required></textarea>
+                <span class="error" id="descError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Avaliação (0-10):</label>
+                <input type="number" id="rating" min="0" max="10" required>
+                <span class="error" id="ratingError"></span>
+            </div>
+
+            <button type="submit">💾 Salvar Feedback</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

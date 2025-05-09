@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedbacks - TICBOX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header-container">
+            <h1>📋 Feedbacks Registrados</h1>
+            <a href="index.html" class="return-btn">📥 Novo Feedback</a>
+        </div>
+        <div id="userList" class="user-list"></div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function loadUsers() {
+            const users = getUsers();
+            const list = document.getElementById('userList');
+            list.innerHTML = '';
+
+            users.forEach(user => {
+                const card = document.createElement('div');
+                card.className = 'user-card';
+                card.innerHTML = `
+                    <div class="user-header">
+                        <h3>👤 ${user.name}</h3>
+                        <div class="rating">⭐ ${user.rating}/10</div>
+                    </div>
+                    
+                    <div class="user-details">
+                        <div class="detail-item">
+                            <span class="detail-label">📱 Celular:</span>
+                            <div class="detail-content">
+                                <span>${user.phone}</span>
+                                <a href="https://wa.me/55${user.phone.replace(/\D/g, '')}" 
+                                   class="whatsapp" target="_blank">
+                                    WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item">
+                            <span class="detail-label">📧 E-mail:</span>
+                            <div class="detail-content">
+                                <span>${user.email}</span>
+                                <a href="mailto:${user.email}" class="email">
+                                    E-mail
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="detail-item full-width">
+                            <span class="detail-label">📝 Descrição:</span>
+                            <p class="description-text">${user.description}</p>
+                        </div>
+                    </div>
+
+                    <div class="actions">
+                        <a href="edit.html?id=${user.id}" class="edit-btn">✏️ Editar</a>
+                        <button onclick="deleteUser('${user.id}')" class="delete-btn">🗑️ Excluir</button>
+                    </div>
+                `;
+                list.appendChild(card);
+            });
+        }
+
+        function deleteUser(id) {
+            const confirm = window.confirm('Tem certeza que deseja excluir?');
+            if(confirm) {
+                const users = getUsers().filter(user => user.id !== id);
+                localStorage.setItem('users', JSON.stringify(users));
+                loadUsers();
+            }
+        }
+
+        window.onload = loadUsers;
+    </script>
+</body>
+</html>

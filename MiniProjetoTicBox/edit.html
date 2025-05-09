@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Feedback - TICBOX</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>✏️ Editar Feedback</h1>
+        <form id="editForm">
+            <div class="form-group">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Celular:</label>
+                <input type="text" id="phone" placeholder="(99) 99999-9999" required>
+                <span class="error" id="phoneError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="description">Descrição:</label>
+                <textarea id="description" required></textarea>
+                <span class="error" id="descError"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Avaliação (0-10):</label>
+                <input type="number" id="rating" min="0" max="10" required>
+                <span class="error" id="ratingError"></span>
+            </div>
+
+            <div class="edit-actions">
+                <a href="list.html" class="cancel-btn">❌ Cancelar</a>
+                <button type="submit" class="update-btn">💾 Atualizar</button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const userId = urlParams.get('id');
+
+        // Carregar dados do usuário
+        const user = getUsers().find(u => u.id === userId);
+        if(user) {
+            document.getElementById('name').value = user.name;
+            document.getElementById('phone').value = user.phone;
+            document.getElementById('email').value = user.email;
+            document.getElementById('description').value = user.description;
+            document.getElementById('rating').value = user.rating;
+        }
+
+        // Atualizar usuário
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            clearErrors();
+
+            const updatedUser = {
+                name: document.getElementById('name').value.trim(),
+                phone: document.getElementById('phone').value.trim(),
+                email: document.getElementById('email').value.trim(),
+                description: document.getElementById('description').value.trim(),
+                rating: document.getElementById('rating').value
+            };
+
+            if(validateForm(updatedUser)) {
+                const users = getUsers().map(u => 
+                    u.id === userId ? {...u, ...updatedUser} : u
+                );
+                localStorage.setItem('users', JSON.stringify(users));
+                window.location.href = 'list.html';
+            }
+        });
+    </script>
+</body>
+</html>
