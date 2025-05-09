@@ -17,8 +17,8 @@ Uma aplicação web simples para **coletar**, **armazenar** e **visualizar** fee
   - Botões de **WhatsApp** e **E-mail** ao lado  
   - Opções de **editar** e **excluir**  
 - **Navegação**:
-  - Botão “💾 Salvar Feedback”  
-  - Botão “👀 Ver Feedbacks” para ir direto à lista  
+  - Botão “Salvar Feedback”  
+  - Botão “Ver Feedbacks” para ir direto à lista  
 - **Estilo** em tons de verde (paleta definida em CSS)
 
 ---
@@ -27,8 +27,8 @@ Uma aplicação web simples para **coletar**, **armazenar** e **visualizar** fee
 
 1. **Clone** ou **baixe** este repositório para sua máquina.  
 2. Abra o arquivo **`index.html`** no seu navegador (Chrome, Firefox, Edge, etc.).  
-3. Preencha os campos e clique em **“💾 Salvar Feedback”**.  
-4. Para ver todos os feedbacks, clique em **“👀 Ver Feedbacks”**.  
+3. Preencha os campos e clique em **“Salvar Feedback”**.  
+4. Para ver todos os feedbacks, clique em **“Ver Feedbacks”**.  
 
 > Não é necessário servidor ou instalação de dependências. Funciona 100% localmente e offline após o carregamento inicial.
 
